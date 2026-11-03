@@ -1,0 +1,133 @@
+{
+  "name": "eval-v1",
+  "eval_file": "/Users/ashriths/Library/Mobile Documents/com~apple~CloudDocs/Repositries/Data Analytics Agentic AI project/Data-Analytics/eval_dataset.txt",
+  "dataset": "/Users/ashriths/Library/Mobile Documents/com~apple~CloudDocs/Repositries/Data Analytics Agentic AI project/Data /SuperStoreOrders.csv",
+  "judge_model": "nvidia/nemotron-3-ultra-550b-a55b",
+  "profile_cached": true,
+  "complete": true,
+  "updated_at": "2026-11-03T11:16:51Z",
+  "case_count": 1,
+  "metrics": {
+    "total_accuracy": 1.0,
+    "tool_call_accuracy": 1.0,
+    "llm_judge_accuracy": 1.0,
+    "full_passed": 1,
+    "tool_passed": 1,
+    "judge_passed": 1,
+    "total_cases": 1
+  },
+  "cases": [
+    {
+      "id": "SSC-089",
+      "category": "ranking_comparison",
+      "difficulty": "medium",
+      "query": "Which five products have the highest profit margin among products with at least 10,000 in sales?",
+      "expected_plan": [
+        {
+          "step": "Load data",
+          "action": "Read SuperStoreOrders.csv and parse sales as a numeric column.",
+          "target_agent": "Exec Agent"
+        },
+        {
+          "step": "Group, filter, and rank",
+          "action": "Group sales and profit by product, filter to sales of at least 10,000, calculate margin, and return the top five.",
+          "target_agent": "Exec Agent"
+        },
+        {
+          "step": "Return result",
+          "action": "Return the top five high-margin products with at least 10,000 in sales.",
+          "target_agent": "Exec Agent"
+        }
+      ],
+      "expected_result": {
+        "summary": "Top five products by profit margin with sales of at least 10,000.",
+        "values": {
+          "top_5_products_by_profit_margin_min_10000_sales": [
+            {
+              "product_name": "Canon imageCLASS 2200 Advanced Copier",
+              "sales": 61600,
+              "profit": 25199.93,
+              "profit_margin_pct": 40.91
+            },
+            {
+              "product_name": "Canon PC1060 Personal Laser Copier",
+              "sales": 11620,
+              "profit": 4570.93,
+              "profit_margin_pct": 39.34
+            },
+            {
+              "product_name": "Bush Classic Bookcase, Pine",
+              "sales": 16752,
+              "profit": 6510.67,
+              "profit_margin_pct": 38.87
+            },
+            {
+              "product_name": "Belkin Router, USB",
+              "sales": 23473,
+              "profit": 8955.02,
+              "profit_margin_pct": 38.15
+            },
+            {
+              "product_name": "Safco Floating Shelf Set, Traditional",
+              "sales": 10575,
+              "profit": 3984.62,
+              "profit_margin_pct": 37.68
+            }
+          ]
+        }
+      },
+      "agent_plan": [
+        {
+          "step": "Parse Dates",
+          "action": "Parse order_date using pd.to_datetime(format='mixed', dayfirst=True, errors='coerce') to ensure correct temporal handling for subsequent filtering.",
+          "target_agent": "Exec Agent"
+        },
+        {
+          "step": "Filter by Sales",
+          "action": "Filter the dataset to include only records where the total sales for the product exceeds 10000 after grouping by product_name.",
+          "target_agent": "Exec Agent"
+        },
+        {
+          "step": "Calculate Profit Margin",
+          "action": "Group the filtered data by product_name and compute the profit margin as sum(profit) / sum(sales) for each product.",
+          "target_agent": "Exec Agent"
+        },
+        {
+          "step": "Rank and Select Top 5",
+          "action": "Sort the resulting products in descending order based on the calculated profit margin and select the top five product_name entries.",
+          "target_agent": "Exec Agent"
+        },
+        {
+          "step": "Final Output",
+          "action": "Present the list of the five product_name with the highest profit margin among those meeting the minimum sales threshold.",
+          "target_agent": "Exec Agent"
+        }
+      ],
+      "planning_error": "",
+      "execution_status": "completed",
+      "execution_error": "",
+      "agent_tool_calls": [
+        {
+          "name": "run_python",
+          "command": "command_1",
+          "code": "import pandas as pd\n\ndf = pd.read_csv(\"/home/user/SuperStoreOrders.csv\", thousands=\",\")\n\n# Parse order_date\ndf['order_date'] = pd.to_datetime(df['order_date'], format='mixed', dayfirst=True, errors='coerce')\n\n# Convert sales to numeric\ndf['sales'] = pd.to_numeric(df['sales'], errors='coerce')\n\n# Check for NaN introduced by conversion\nprint(\"sales NaN count:\", df['sales'].isna().sum())\nprint(\"profit NaN count:\", df['profit'].isna().sum())\n\n# Group by product_name\nagg = df.groupby('product_name').agg(\n    total_sales=('sales', 'sum'),\n    total_profit=('profit', 'sum')\n).reset_index()\n\n# Filter products with total sales >= 10000\nagg_filtered = agg[agg['total_sales'] >= 10000].copy()\n\n# Calculate profit margin\nagg_filtered['profit_margin'] = agg_filtered['total_profit'] / agg_filtered['total_sales']\n\n# Rank descending and select top 5\ntop5 = agg_filtered.sort_values('profit_margin', ascending=False).head(5)\n\nprint(\"\\nTop 5 products by profit margin (sales >= 10000):\")\nprint(top5[['product_name', 'total_sales', 'total_profit', 'profit_margin']].to_string(index=False))\n",
+          "output": "STDOUT:\nsales NaN count: 0\nprofit NaN count: 0\n\nTop 5 products by profit margin (sales >= 10000):\n                         product_name  total_sales  total_profit  profit_margin\nCanon imageCLASS 2200 Advanced Copier        61600    25199.9280       0.409090\n   Canon PC1060 Personal Laser Copier        11620     4570.9347       0.393368\n          Bush Classic Bookcase, Pine        16752     6510.6740       0.388651\n                   Belkin Router, USB        23473     8955.0180       0.381503\nSafco Floating Shelf Set, Traditional        10575     3984.6166       0.376796",
+          "error": null,
+          "image_count": 0
+        }
+      ],
+      "image_count": 0,
+      "blocked_attempts": [],
+      "tool_call_check": {
+        "passed": true,
+        "reason": "1 run_python call(s) passed syntax, dataset-path, and safety checks."
+      },
+      "judge": {
+        "verdict": "PASSED",
+        "reasoning": "The agent correctly loaded the data, grouped by product, filtered for sales >= 10000, calculated profit margin, ranked descending, and returned the top five products with values matching the expected result (profit margin as decimal vs percentage is equivalent)."
+      },
+      "passed": true,
+      "duration_seconds": 114.78
+    }
+  ]
+}

@@ -1,0 +1,214 @@
+Profiling dataset once: /Users/ashriths/Library/Mobile Documents/com~apple~CloudDocs/Repositries/Data Analytics Agentic AI project/Data /SuperStoreOrders.csv
+Profile ready in 7.82s
+[1/100] SSC-001: What is the total sales revenue across the entire dataset?
+  tool=True judge=PASSED passed=True time=38.82s
+[2/100] SSC-002: What is the total profit across the entire dataset?
+  tool=True judge=PASSED passed=True time=21.09s
+[3/100] SSC-003: How many units were sold in total?
+  tool=True judge=PASSED passed=True time=13.81s
+[4/100] SSC-004: How many unique orders are in the dataset?
+  tool=True judge=PASSED passed=True time=23.48s
+[5/100] SSC-005: How many unique customers are in the dataset?
+  tool=True judge=PASSED passed=True time=20.93s
+[6/100] SSC-006: What is the average discount rate across all transactions?
+  tool=True judge=PASSED passed=True time=17.82s
+[7/100] SSC-007: What is the overall profit margin for the dataset?
+  tool=True judge=PASSED passed=True time=26.7s
+[8/100] SSC-008: How many transaction rows are in the dataset?
+  tool=True judge=PASSED passed=True time=21.45s
+[9/100] SSC-009: How did total sales change by year from 2011 to 2014?
+  tool=True judge=PASSED passed=True time=34.04s
+[10/100] SSC-010: How did total profit change by year from 2011 to 2014?
+  tool=True judge=PASSED passed=True time=82.28s
+[11/100] SSC-011: Show the monthly sales trend across the full dataset.
+  tool=True judge=PASSED passed=True time=67.35s
+[12/100] SSC-012: Show the monthly profit trend across the full dataset.
+  tool=True judge=PASSED passed=True time=36.97s
+[13/100] SSC-013: What were total Q4 sales in each year?
+  tool=True judge=PASSED passed=True time=38.57s
+[14/100] SSC-014: Which month had the highest total sales?
+  tool=True judge=FAILED passed=False time=45.48s
+[15/100] SSC-015: Which month had the lowest total profit?
+  tool=True judge=FAILED passed=False time=28.75s
+[16/100] SSC-016: What were total sales and profit after March 2013, from April through December 2013?
+  tool=True judge=PASSED passed=True time=47.55s
+[17/100] SSC-017: What was the year-over-year sales growth in 2014 compared with 2013?
+  tool=True judge=PASSED passed=True time=27.36s
+[18/100] SSC-018: What were total sales and profit in November and December across all years?
+  tool=True judge=PASSED passed=True time=79.33s
+[19/100] SSC-019: What was the average order value in each year?
+  tool=True judge=FAILED passed=False time=32.08s
+[20/100] SSC-020: How many unique orders were placed in each year?
+  tool=True judge=PASSED passed=True time=34.93s
+[21/100] SSC-021: Do weekend orders generate more sales than weekday orders?
+  tool=True judge=PASSED passed=True time=41.65s
+[22/100] SSC-022: Show cumulative monthly sales for 2014.
+  tool=True judge=PASSED passed=True time=55.27s
+[23/100] SSC-023: How did Q4 2014 sales compare with Q4 2013?
+  tool=True judge=PASSED passed=True time=97.77s
+[24/100] SSC-024: Which markets generate the most sales?
+  tool=True judge=PASSED passed=True time=24.64s
+[25/100] SSC-025: Which markets generate the most profit?
+  tool=True judge=PASSED passed=True time=37.02s
+[26/100] SSC-026: What is the profit margin for each market?
+  tool=True judge=PASSED passed=True time=73.86s
+[27/100] SSC-027: Which are the top five countries by sales?
+  tool=True judge=PASSED passed=True time=29.83s
+[28/100] SSC-028: Which five countries have the lowest total profit?
+  tool=True judge=PASSED passed=True time=19.66s
+[29/100] SSC-029: Compare sales and profit for the EU and US markets.
+  tool=True judge=FAILED passed=False time=31.2s
+[30/100] SSC-030: What share of total sales comes from the APAC market?
+  tool=True judge=FAILED passed=False time=25.68s
+[31/100] SSC-031: Which APAC regions generate the most sales?
+  tool=True judge=PASSED passed=True time=37.66s
+[32/100] SSC-032: Which US states have the highest sales?
+  tool=True judge=PASSED passed=True time=31.25s
+[33/100] SSC-033: Which country generates the highest total profit?
+  tool=True judge=PASSED passed=True time=26.38s
+[34/100] SSC-034: Which country generates the lowest total profit?
+  tool=True judge=PASSED passed=True time=18.62s
+[35/100] SSC-035: What are the sales and profit for the Canada market?
+  tool=True judge=PASSED passed=True time=23.38s
+[36/100] SSC-036: What are the sales and profit for the EMEA market?
+  tool=True judge=PASSED passed=True time=69.26s
+[37/100] SSC-037: How did sales by market perform in 2014?
+  tool=True judge=FAILED passed=False time=30.59s
+[38/100] SSC-038: Which market has the highest average order value?
+  tool=True judge=FAILED passed=False time=30.41s
+[39/100] SSC-039: Which product categories generate the most sales?
+  tool=True judge=PASSED passed=True time=85.42s
+[40/100] SSC-040: Which product categories generate the most profit?
+  tool=True judge=PASSED passed=True time=30.08s
+[41/100] SSC-041: What is the profit margin for each product category?
+  tool=True judge=PASSED passed=True time=28.95s
+[42/100] SSC-042: Which ten products generate the most sales?
+  tool=True judge=PASSED passed=True time=40.54s
+[43/100] SSC-043: Which ten products generate the most profit?
+  tool=True judge=PASSED passed=True time=22.17s
+[44/100] SSC-044: Which ten products have the lowest total profit?
+  tool=True judge=PASSED passed=True time=29.32s
+[45/100] SSC-045: Which sub-categories generate the most sales?
+  tool=True judge=PASSED passed=True time=30.18s
+[46/100] SSC-046: Which sub-categories are losing money?
+  tool=True judge=PASSED passed=True time=22.44s
+[47/100] SSC-047: What share of total sales comes from the Technology category?
+  tool=True judge=PASSED passed=True time=63.99s
+[48/100] SSC-048: Compare total profit for Furniture and Office Supplies.
+  tool=False judge=FAILED passed=False time=4.62s
+[49/100] SSC-049: Which Technology products generate the most profit?
+  tool=True judge=FAILED passed=False time=58.56s
+[50/100] SSC-050: What is the average discount rate for each product category?
+  tool=True judge=PASSED passed=True time=18.03s
+[51/100] SSC-051: Which products sold the highest total quantity?
+  tool=True judge=FAILED passed=False time=40.57s
+[52/100] SSC-052: What were sales and profit for Furniture in 2013?
+  tool=True judge=PASSED passed=True time=20.4s
+[53/100] SSC-053: Which five sub-categories generate the most sales?
+  tool=True judge=PASSED passed=True time=33.17s
+[54/100] SSC-054: Which five sub-categories have the lowest total profit?
+  tool=True judge=PASSED passed=True time=54.43s
+[55/100] SSC-055: Which customer segments generate the most sales?
+  tool=True judge=PASSED passed=True time=34.4s
+[56/100] SSC-056: Which customer segments generate the most profit?
+  tool=True judge=PASSED passed=True time=22.02s
+[57/100] SSC-057: Which ten customers generate the most sales?
+  tool=True judge=PASSED passed=True time=38.34s
+[58/100] SSC-058: How many unique customers are in each segment?
+  tool=True judge=PASSED passed=True time=43.05s
+[59/100] SSC-059: What is the average sales value per order for each customer segment?
+  tool=True judge=FAILED passed=False time=32.5s
+[60/100] SSC-060: Which customer segment has the highest profit margin?
+  tool=True judge=FAILED passed=False time=46.13s
+[61/100] SSC-061: What share of total sales comes from the Home Office segment?
+  tool=True judge=FAILED passed=False time=157.3s
+[62/100] SSC-062: Which five customers generate the most profit?
+  tool=True judge=PASSED passed=True time=23.84s
+[63/100] SSC-063: What is the average number of orders per customer?
+  tool=True judge=PASSED passed=True time=26.32s
+[64/100] SSC-064: What is the average quantity per order for each customer segment?
+  tool=True judge=FAILED passed=False time=24.82s
+[65/100] SSC-065: How does profit change across discount bands?
+  tool=True judge=FAILED passed=False time=40.12s
+[66/100] SSC-066: Compare total sales and profit for discounted versus non-discounted transactions.
+  tool=True judge=FAILED passed=False time=48.56s
+[67/100] SSC-067: What are sales and profit for transactions with discounts of 40% or more?
+  tool=True judge=PASSED passed=True time=27.93s
+[68/100] SSC-068: How much loss is generated by transactions with discounts of 40% or more?
+  tool=True judge=FAILED passed=False time=26.23s
+[69/100] SSC-069: What is the correlation between discount and profit?
+  tool=True judge=PASSED passed=True time=20.8s
+[70/100] SSC-070: Which category loses the most profit on discounts of 40% or more?
+  tool=True judge=PASSED passed=True time=21.78s
+[71/100] SSC-071: How much profit is generated by transactions with zero discount?
+  tool=True judge=FAILED passed=False time=77.14s
+[72/100] SSC-072: What share of transaction rows have a discount greater than zero?
+  tool=True judge=PASSED passed=True time=22.35s
+[73/100] SSC-073: Which five products have the largest negative profit on discounts of 40% or more?
+  tool=True judge=PASSED passed=True time=29.7s
+[74/100] SSC-074: What is the average discount rate for each market?
+  tool=True judge=PASSED passed=True time=20.68s
+[75/100] SSC-075: What is the average shipping cost for each ship mode?
+  tool=True judge=PASSED passed=True time=21.95s
+[76/100] SSC-076: What percentage of sales goes to shipping cost for each ship mode?
+  tool=True judge=PASSED passed=True time=20.31s
+[77/100] SSC-077: What is the average shipping cost for each order priority?
+  tool=True judge=PASSED passed=True time=23.71s
+[78/100] SSC-078: How do sales and profit compare across order priorities?
+  tool=True judge=PASSED passed=True time=35.81s
+[79/100] SSC-079: How many unique orders use each ship mode?
+  tool=True judge=PASSED passed=True time=18.51s
+[80/100] SSC-080: What is the average number of days between order date and ship date?
+  tool=True judge=PASSED passed=True time=28.33s
+[81/100] SSC-081: Which ship mode has the highest average shipping cost per order?
+  tool=True judge=FAILED passed=False time=28.09s
+[82/100] SSC-082: What is total shipping cost and shipping cost per order overall?
+  tool=True judge=PASSED passed=True time=23.91s
+[83/100] SSC-083: Which five markets have the highest profit margin?
+  tool=True judge=FAILED passed=False time=24.29s
+[84/100] SSC-084: Which five markets have the lowest profit margin?
+  tool=True judge=FAILED passed=False time=33.59s
+[85/100] SSC-085: Which five countries generate the most profit?
+  tool=True judge=PASSED passed=True time=25.41s
+[86/100] SSC-086: Which five sub-categories generate the most profit?
+  tool=True judge=PASSED passed=True time=23.37s
+[87/100] SSC-087: Compare sales by category in 2013 and 2014.
+  tool=True judge=PASSED passed=True time=28.08s
+[88/100] SSC-088: Which categories grew fastest in sales from 2013 to 2014?
+  tool=True judge=PASSED passed=True time=30.6s
+[89/100] SSC-089: Which five products have the highest profit margin among products with at least 10,000 in sales?
+  tool=True judge=FAILED passed=False time=52.29s
+[90/100] SSC-090: Which market had the largest sales growth from 2013 to 2014?
+  tool=True judge=FAILED passed=False time=31.63s
+[91/100] SSC-091: Create a line chart of monthly sales across the full dataset.
+  tool=True judge=FAILED passed=False time=58.08s
+[92/100] SSC-092: Create a bar chart of sales by market.
+  tool=True judge=PASSED passed=True time=33.09s
+[93/100] SSC-093: Create a bar chart of profit by product category.
+  tool=True judge=PASSED passed=True time=29.01s
+[94/100] SSC-094: Create a scatter plot of discount versus profit.
+  tool=True judge=PASSED passed=True time=39.24s
+[95/100] SSC-095: Create a heatmap of sales by year and category.
+  tool=True judge=PASSED passed=True time=75.55s
+[96/100] SSC-096: Which EMEA sub-categories have the lowest total profit, and how much profit is lost on discounts of 40% or more?
+  tool=True judge=FAILED passed=False time=74.1s
+[97/100] SSC-097: Which market has the highest sales and highest profit, and what is its profit margin?
+  tool=True judge=PASSED passed=True time=23.69s
+[98/100] SSC-098: Do high discounts reduce profit? Compare profit by discount band.
+  tool=True judge=FAILED passed=False time=46.04s
+[99/100] SSC-099: Compare the profitability of the Consumer and Corporate segments.
+  tool=True judge=FAILED passed=False time=41.84s
+[100/100] SSC-100: Summarize 2014 performance versus 2013 by market.
+  tool=True judge=FAILED passed=False time=37.61s
+[14/100] SSC-014: Which month had the highest total sales?
+  tool=True judge=FAILED passed=False time=42.83s
+[15/100] SSC-015: Which month had the lowest total profit?
+  tool=True judge=FAILED passed=False time=26.15s
+[15/100] SSC-015: Which month had the lowest total profit?
+  tool=True judge=PASSED passed=True time=25.54s
+[14/100] SSC-014: Which month had the highest total sales?
+  tool=True judge=PASSED passed=True time=44.24s
+[1/100] SSC-001: What is the total sales revenue across the entire dataset?
+  tool=True judge=PASSED passed=True time=33.69s
+[89/100] SSC-089: Which five products have the highest profit margin among products with at least 10,000 in sales?
+  tool=True judge=PASSED passed=True time=114.78s

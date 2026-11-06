@@ -11,3 +11,9 @@ wheels/
 
 # Secrets
 .env
+
+# Kafka / DuckDB runtime data
+*.duckdb
+*.duckdb.wal
+*.duckdb.tmp
+Kafka -Evant Bus/data/

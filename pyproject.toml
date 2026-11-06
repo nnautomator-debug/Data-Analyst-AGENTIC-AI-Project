@@ -16,6 +16,8 @@ dependencies = [
     "python-dotenv>=1.0.1",
     "langchain-openai>=1.1.0",
     "openai>=3.42.1",
+    "kafka-python>=3.0.12",
+    "duckdb>=2.0.0",
 ]
 
 [project.scripts]

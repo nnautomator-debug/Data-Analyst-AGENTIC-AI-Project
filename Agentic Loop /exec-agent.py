@@ -28,6 +28,7 @@ class AgentState(TypedDict, total=False):
     user_query: str
     dataset_profile: str
     plan: list[dict]
+    repair_context: dict
     validation: dict
     max_scripts: int
     sandbox_path: str
@@ -95,6 +96,7 @@ Inspect stdout, stderr, and tracebacks from each execution and correct the code 
 When parsing date-like object columns, use pd.to_datetime with format="mixed", dayfirst=True, and errors="coerce" unless the profile proves a single format.
 Use .copy() after filtering, and create derived date columns before groupby because aggregated frames do not preserve original datetime columns.
 Use plt.show() so matplotlib figures are captured as PNG outputs.
+If repair context is provided, treat it as a fresh-sandbox repair run: recreate the required prior computation from the original plan and execution transcript, apply the checker fixes by line number, rerun the failed command, and preserve the original user query scope.
 Stop when the required data and images have been produced or when no tool calls remain.
 """
 
@@ -320,6 +322,19 @@ def _execution_task(
     sandbox_path: str,
     max_scripts: int,
 ) -> str:
+    repair_context = state.get("repair_context") or {}
+    repair_section = ""
+    if repair_context:
+        repair_section = f"""
+
+REPAIR CONTEXT:
+{json.dumps(repair_context, indent=2, default=str)}
+
+This repair run uses a fresh sandbox.
+Recreate the required prior computation from the original plan and execution transcript.
+Apply the checker fixes by line number, rerun the failed command, and preserve the original user query scope.
+"""
+
     return f"""
 USER REQUEST:
 {state["user_query"]}
@@ -341,6 +356,7 @@ You may call run_python at most {max_scripts} times.
 Each call executes one Python script in the shared sandbox.
 Use the exact dataset path and column names from the dataset profile.
 Do not return insights or recommendations.
+{repair_section}
 """
 
 

@@ -907,7 +907,7 @@ Please do not commit secrets, `.env`, generated DuckDB files, or local output ar
 
 ## License
 
-No license file is currently included in this repository. Add a license before distributing or using this project commercially.
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
 
 ---
 
